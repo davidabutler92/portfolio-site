@@ -1,51 +1,82 @@
 import React from 'react';
-import { NavHashLink as Link } from 'react-router-hash-link';
-
-import styles from './Header.css';
-
+import { NavHashLink as RouterLink } from 'react-router-hash-link';
+import { AppBar, Toolbar, Link } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+const useStyles = makeStyles({
+  root: {
+    alignItems: 'center',
+  },
+  toolbar: {
+    width: '40%',
+    justifyContent: 'space-between',
+  },
+  link: {
+    color: 'inherit',
+    fontFamily: 'Arial',
+    fontSize: '.8em',
+    letterSpacing: '.2em',
+    textTransform: 'uppercase',
+    '&:hover': {
+      textDecoration: 'none',
+    },
+  },
+});
 export default function Header() {
+  const classes = useStyles();
   return (
-    <div className={styles.root}>
-      <Link
-        smooth
-        activeClassName="selected"
-        activeStyle={{ color: 'lightblue' }}
-        to="/#section-home"
-      >
-        Home
-      </Link>
-      <Link
-        smooth
-        activeClassName="selected"
-        activeStyle={{ color: 'lightblue' }}
-        to="/about#section-about"
-      >
-        About
-      </Link>
-      <Link
-        smooth
-        activeClassName="selected"
-        activeStyle={{ color: 'lightblue' }}
-        to="/portfolio#section-portfolio"
-      >
-        Portfolio
-      </Link>
-      <Link
-        smooth
-        activeClassName="selected"
-        activeStyle={{ color: 'lightblue' }}
-        to="/resume#section-resume"
-      >
-        Resume
-      </Link>
-      <Link
-        smooth
-        activeClassName="selected"
-        activeStyle={{ color: 'lightblue' }}
-        to="/contact#section-contact"
-      >
-        Contact
-      </Link>
-    </div>
+    <AppBar className={classes.root}>
+      <Toolbar className={classes.toolbar}>
+        <Link
+          className={classes.link}
+          smooth
+          activeClassName='selected'
+          activeStyle={{ color: 'red' }}
+          to='/#section-home'
+          component={RouterLink}
+        >
+          Home
+        </Link>
+        <Link
+          className={classes.link}
+          smooth
+          activeClassName='selected'
+          activeStyle={{ color: 'red' }}
+          to='/about#section-about'
+          component={RouterLink}
+        >
+          About
+        </Link>
+        <Link
+          className={classes.link}
+          smooth
+          activeClassName='selected'
+          activeStyle={{ color: 'red' }}
+          to='/portfolio#section-portfolio'
+          component={RouterLink}
+        >
+          Projects
+        </Link>
+        <Link
+          className={classes.link}
+          activeClassName='selected'
+          activeStyle={{ color: 'red' }}
+          smooth
+          to='/resume#section-resume'
+          component={RouterLink}
+        >
+          Resume
+        </Link>
+        <Link
+          className={classes.link}
+          activeClassName='selected'
+          activeStyle={{ color: 'red' }}
+          smooth
+          to='/contact#section-contact'
+          component={RouterLink}
+        >
+          Contact
+        </Link>
+      </Toolbar>
+    </AppBar>
   );
 }

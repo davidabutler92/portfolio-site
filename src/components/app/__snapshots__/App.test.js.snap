@@ -5,35 +5,44 @@ exports[`App component renders App 1`] = `
   <div
     class="root"
   >
-    <div
-      class="root"
+    <header
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-1 mui-fixed MuiPaper-elevation4"
     >
-      <a
-        href="/#section-home"
+      <div
+        class="MuiToolbar-root MuiToolbar-regular makeStyles-toolbar-2 MuiToolbar-gutters"
       >
-        Home
-      </a>
-      <a
-        href="/about#section-about"
-      >
-        About
-      </a>
-      <a
-        href="/portfolio#section-portfolio"
-      >
-        Portfolio
-      </a>
-      <a
-        href="/resume#section-resume"
-      >
-        Resume
-      </a>
-      <a
-        href="/contact#section-contact"
-      >
-        Contact
-      </a>
-    </div>
+        <a
+          class="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-link-3 MuiTypography-colorPrimary"
+          href="/#section-home"
+        >
+          Home
+        </a>
+        <a
+          class="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-link-3 MuiTypography-colorPrimary"
+          href="/about#section-about"
+        >
+          About
+        </a>
+        <a
+          class="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-link-3 MuiTypography-colorPrimary"
+          href="/portfolio#section-portfolio"
+        >
+          Projects
+        </a>
+        <a
+          class="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-link-3 MuiTypography-colorPrimary"
+          href="/resume#section-resume"
+        >
+          Resume
+        </a>
+        <a
+          class="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-link-3 MuiTypography-colorPrimary"
+          href="/contact#section-contact"
+        >
+          Contact
+        </a>
+      </div>
+    </header>
     <main>
       <section
         class="root"
