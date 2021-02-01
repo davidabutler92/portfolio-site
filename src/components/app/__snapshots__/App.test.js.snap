@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders App 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+  >
+    <section
+      class="root"
+      id="section-home"
+    />
+  </div>
+</DocumentFragment>
+`;
