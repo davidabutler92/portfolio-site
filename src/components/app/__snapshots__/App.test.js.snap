@@ -5,10 +5,57 @@ exports[`App component renders App 1`] = `
   <div
     class="root"
   >
-    <section
+    <div
       class="root"
-      id="section-home"
-    />
+    >
+      <a
+        href="/#section-home"
+      >
+        Home
+      </a>
+      <a
+        href="/about#section-about"
+      >
+        About
+      </a>
+      <a
+        href="/portfolio#section-portfolio"
+      >
+        Portfolio
+      </a>
+      <a
+        href="/resume#section-resume"
+      >
+        Resume
+      </a>
+      <a
+        href="/contact#section-contact"
+      >
+        Contact
+      </a>
+    </div>
+    <main>
+      <section
+        class="root"
+        id="section-home"
+      />
+      <section
+        class="root"
+        id="section-about"
+      />
+      <section
+        class="root"
+        id="section-portfolio"
+      />
+      <section
+        class="root"
+        id="section-resume"
+      />
+      <section
+        class="root"
+        id="section-contact"
+      />
+    </main>
   </div>
 </DocumentFragment>
 `;
