@@ -7,12 +7,12 @@ import Resume from '../Resume/Resume';
 
 export default function Container() {
   return (
-    <main>
+    <section>
       <Home />
       <About />
       <Portfolio />
       <Resume />
       <Contact />
-    </main>
+    </section>
   );
 }

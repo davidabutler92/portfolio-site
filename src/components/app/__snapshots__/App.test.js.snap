@@ -2,52 +2,66 @@
 
 exports[`App component renders App 1`] = `
 <DocumentFragment>
-  <div
+  <main
     class="root"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-root-1 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorTransparent makeStyles-root-1 mui-fixed MuiPaper-elevation4"
     >
       <div
-        class="MuiToolbar-root MuiToolbar-regular makeStyles-toolbar-2 MuiToolbar-gutters"
+        class="makeStyles-drawerContainer-2"
       >
-        <a
-          class="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-link-3 MuiTypography-colorPrimary"
-          href="/#section-home"
+        <button
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-iconButton-8"
+          tabindex="0"
+          type="button"
         >
-          Home
-        </a>
-        <a
-          class="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-link-3 MuiTypography-colorPrimary"
-          href="/about#section-about"
-        >
-          About
-        </a>
-        <a
-          class="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-link-3 MuiTypography-colorPrimary"
-          href="/portfolio#section-portfolio"
-        >
-          Projects
-        </a>
-        <a
-          class="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-link-3 MuiTypography-colorPrimary"
-          href="/resume#section-resume"
-        >
-          Resume
-        </a>
-        <a
-          class="MuiTypography-root MuiLink-root MuiLink-underlineHover makeStyles-link-3 MuiTypography-colorPrimary"
-          href="/contact#section-contact"
-        >
-          Contact
-        </a>
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root makeStyles-icon-7"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M2 15.5v2h20v-2H2zm0-5v2h20v-2H2zm0-5v2h20v-2H2z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
       </div>
     </header>
-    <main>
+    <section>
       <section
-        class="root"
+        class="MuiContainer-root makeStyles-root-10 MuiContainer-disableGutters"
         id="section-home"
-      />
+      >
+        <div
+          class="MuiBox-root MuiBox-root-13 makeStyles-contentContainer-11"
+        >
+          <h3
+            class="MuiTypography-root MuiTypography-h3"
+          >
+            Hello, I'm
+          </h3>
+          <h1
+            class="MuiTypography-root MuiTypography-h1"
+          >
+            David Butler
+          </h1>
+          <h3
+            class="MuiTypography-root makeStyles-title-12 MuiTypography-h3"
+            style="font-weight: 100;"
+          >
+            Software Engineer
+          </h3>
+        </div>
+      </section>
       <section
         class="root"
         id="section-about"
@@ -64,7 +78,7 @@ exports[`App component renders App 1`] = `
         class="root"
         id="section-contact"
       />
-    </main>
-  </div>
+    </section>
+  </main>
 </DocumentFragment>
 `;
