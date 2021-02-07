@@ -18,12 +18,13 @@ const useStyles = makeStyles({
 
 function AppLink({ path, title }) {
   const classes = useStyles();
+
   return (
     <Link
       className={classes.link}
       smooth
-      activeClassName="selected"
-      activeStyle={{ color: '#f44336' }}
+      activeClassName='selected'
+      activeStyle={{ color: '#4caf50' }}
       to={path}
       component={RouterLink}
     >
@@ -34,7 +35,7 @@ function AppLink({ path, title }) {
 
 AppLink.propTypes = {
   path: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
 };
 
 export default AppLink;

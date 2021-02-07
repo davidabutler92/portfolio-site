@@ -4,7 +4,7 @@ import { Drawer, List, IconButton } from '@material-ui/core';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import PropTypes from 'prop-types';
 
-import DrawerLinksList from '../DrawerLinksList/DrawerLinkList';
+import DrawerLinkList from '../DrawerLinksList/DrawerLinkList';
 import DrawerIcons from '../DrawerIcons/DrawerIcons';
 
 const useStyles = makeStyles({
@@ -15,12 +15,12 @@ const useStyles = makeStyles({
     justifyContent: 'space-around',
   },
   icon: {
-    width: '50px',
-    height: '50px',
+    width: '35px',
+    height: '35px',
   },
   iconButton: {
-    width: '70px',
-    height: '70px',
+    width: '50px',
+    height: '50px',
   },
   iconContainer: {
     display: 'flex',
@@ -50,17 +50,19 @@ function AppDrawer({ setLightOrDark, lightOrDark }) {
         <DehazeIcon className={classes.icon} />
       </IconButton>
 
-      <Drawer anchor={'top'} open={open} onClose={toggleDrawer(false)}>
-        <List
-          onClick={toggleDrawer(false)}
-          className={classes.list}
-          onKeyDown={toggleDrawer(false)}
-        >
-          <DrawerIcons
-            lightOrDark={lightOrDark}
-            setLightOrDark={setLightOrDark}
-          />
-          <DrawerLinksList />
+      <Drawer
+        anchor={'top'}
+        open={open}
+        onClick={toggleDrawer(false)}
+        onClose={toggleDrawer(false)}
+        onKeyDown={toggleDrawer(false)}
+      >
+        <DrawerIcons
+          lightOrDark={lightOrDark}
+          setLightOrDark={setLightOrDark}
+        />
+        <List className={classes.list}>
+          <DrawerLinkList />
         </List>
       </Drawer>
     </>

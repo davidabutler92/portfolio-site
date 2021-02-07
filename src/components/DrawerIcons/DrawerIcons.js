@@ -7,17 +7,17 @@ import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
   icon: {
-    width: '50px',
-    height: '50px',
+    width: '35px',
+    height: '35px',
   },
   iconButton: {
-    width: '60px',
-    height: '60px',
+    width: '50px',
+    height: '50px',
   },
   iconContainer: {
     display: 'flex',
     justifyContent: 'space-between',
-    margin: '10px'
+    paddingTop: '8px',
   },
 });
 

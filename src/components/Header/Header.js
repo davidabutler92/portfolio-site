@@ -1,78 +1,56 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Box } from '@material-ui/core';
+import { AppBar } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import AppDrawer from '../AppDrawer/AppDrawer';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import PropTypes from 'prop-types';
-
 import HeaderContents from '../HeaderContents/HeaderContents';
-
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.up('md')]: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      boxShadow: 'none',
-      paddingLeft: '20px',
-      paddingRight: '20px',
-      height: '10%',
-    },
-    [theme.breakpoints.down('md')]: {
-      height: '10%',
-      boxShadow: 'none',
-      paddingLeft: '20px',
-    },
-    transition: '250ms ease-in',
+    boxShadow: 'none',
+    background: 'transparent',
+    color: 'inherit',
+    height: '10%',
+    justifyContent: 'center',
   },
-  drawerContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    height: '100%',
+  navScrolled: {
+    background: theme.palette.background.default,
+    color: 'inherit',
+    height: '10%',
+    justifyContent: 'center',
   },
 }));
-
 function Header({ setLightOrDark, lightOrDark }) {
   const classes = useStyles();
   const theme = useTheme();
-  const isScreenSizeMedium = useMediaQuery(theme.breakpoints.up('md'));
-
-  const [isTransparent, setTransparent] = useState('transparent');
-
+  const isScreenSizeMedium = useMediaQuery(theme.breakpoints.up('md'), {
+    noSsr: true,
+  });
+  const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       const show = window.scrollY > 15;
-      show ? setTransparent('default') : setTransparent('transparent');
+      show ? setIsScrolled(true) : setIsScrolled(false);
     };
     document.addEventListener('scroll', handleScroll);
-
     return () => {
       document.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   return (
-    <AppBar component='nav' color={isTransparent} className={classes.root}>
-      {isScreenSizeMedium ? (
-        <HeaderContents
-          lightOrDark={lightOrDark}
-          setLightOrDark={setLightOrDark}
-        />
-      ) : (
-        <Box className={classes.drawerContainer}>
-          <AppDrawer
-            setLightOrDark={setLightOrDark}
-            lightOrDark={lightOrDark}
-          />
-        </Box>
-      )}
+    <AppBar
+      component='header'
+      className={isScrolled ? classes.navScrolled : classes.root}
+    >
+      <HeaderContents
+        lightOrDark={lightOrDark}
+        setLightOrDark={setLightOrDark}
+        isScreenSizeMedium={isScreenSizeMedium}
+      />
     </AppBar>
   );
 }
-
 Header.propTypes = {
   setLightOrDark: PropTypes.func,
   lightOrDark: PropTypes.bool,
 };
-
 export default Header;

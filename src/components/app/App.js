@@ -4,30 +4,47 @@ import {
   createMuiTheme,
   ThemeProvider,
   responsiveFontSizes,
+  makeStyles,
 } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
-import styles from './App.css';
 import Header from '../Header/Header';
 import Container from '../Container/Container';
-
+const useStyles = makeStyles({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    boxSizing: 'border-box',
+    minWidth: '100vw',
+    maxWidth: '100vw',
+    minHeight: '100vh',
+  },
+});
 export default function App() {
   const [lightOrDark, setLightOrDark] = useState(true);
   const palletType = lightOrDark ? 'light' : 'dark';
-
+  const classes = useStyles();
   let theme = createMuiTheme({
     palette: {
       type: palletType,
     },
     typography: {
       fontFamily: 'sans-serif',
+      body1: {
+        fontSize: '1.2rem',
+        LineHeight: 1.6,
+      },
+      body2: {
+        fontSize: '1.0rem',
+        lineHeight: 1.6,
+      },
     },
   });
-
   theme = responsiveFontSizes(theme);
-
   return (
-    <main className={styles.root}>
+    <main className={classes.root}>
       <Router>
         <ThemeProvider theme={theme}>
           <CssBaseline />

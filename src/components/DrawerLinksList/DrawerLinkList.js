@@ -4,7 +4,7 @@ import { NavHashLink as RouterLink } from 'react-router-hash-link';
 
 import { APP_LINKS } from '../../constants';
 
-export default function DrawerLinksList() {
+export default function DrawerLinkList() {
   return (
     <>
       {APP_LINKS.map(({ path, title }, index) => (
@@ -14,7 +14,7 @@ export default function DrawerLinksList() {
           to={path}
           smooth
           activeClassName='selected'
-          activeStyle={{ color: '#f44336' }}
+          activeStyle={{ color: '#4caf50' }}
           component={RouterLink}
         >
           <ListItemText primary={title} />

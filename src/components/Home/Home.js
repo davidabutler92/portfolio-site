@@ -23,10 +23,10 @@ const useStyles = makeStyles({
   },
   title: {
     fontSize: '2.5rem',
-  }
+  },
 });
 
-export default function Home() {
+function Home() {
   const classes = useStyles();
   return (
     <Container
@@ -52,3 +52,5 @@ export default function Home() {
     </Container>
   );
 }
+
+export default Home;
