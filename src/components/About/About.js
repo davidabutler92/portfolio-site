@@ -6,59 +6,14 @@ import {
   Typography,
   IconButton,
 } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import TwitterIcon from '@material-ui/icons/Twitter';
 
 import pictureOfMe from '../../assets/headshot.jpeg';
+import useStyles from './About.styles';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    minHeight: '100vh',
-    paddingTop: theme.spacing(10),
-    paddingBottom: theme.spacing(10),
-    paddingLeft: theme.spacing(1.5),
-    paddingRight: theme.spacing(1.5),
-    [theme.breakpoints.up('lg')]: {
-      paddingLeft: theme.spacing(10),
-      paddingRight: theme.spacing(10),
-    },
-  },
-  icon: {
-    width: '35px',
-    height: '35px',
-  },
-  iconButton: {
-    width: '50px',
-    height: '50px',
-  },
-  image: {
-    height: '100%',
-    width: '100%',
-    objectFit: 'contain',
-  },
-  textContainer: {
-    width: '100%',
-    minHeight: '100%',
-    justifyContent: 'space-evenly',
-    [theme.breakpoints.down('sm')]: {
-      marginLeft: theme.spacing(3.5),
-      marginRight: theme.spacing(3.5),
-    },
-  },
-  textItem: {
-    [theme.breakpoints.down('sm')]: {
-      paddingTop: theme.spacing(2),
-      paddingBottom: theme.spacing(2),
-    },
-  },
-  textColor: {
-    color: theme.palette.text.secondary,
-  },
-}));
-
-function About() {
+const About = () => {
   const classes = useStyles();
   return (
     <Container
@@ -68,12 +23,7 @@ function About() {
       className={classes.root}
     >
       <Grid container spacing={4}>
-        <Grid
-          style={{ display: 'flex', justifyContent: 'center' }}
-          item
-          md={6}
-          className={classes.gridItem}
-        >
+        <Grid item md={6}>
           <img className={classes.image} src={pictureOfMe} />
         </Grid>
         <Grid
@@ -84,7 +34,7 @@ function About() {
           direction='column'
         >
           <Grid item className={classes.textItem}>
-            <Typography style={{ fontWeight: 100 }} variant='h3'>
+            <Typography style={{ fontWeight: 100 }} variant='h3' component='h1'>
               About <span style={{ fontWeight: 600 }}>Me</span>
             </Typography>
           </Grid>
@@ -109,10 +59,7 @@ function About() {
               blue bird days at our crowning jewel of Oregon, Mt. Hood.
             </Typography>
           </Grid>
-          <Grid
-            item
-            className={[classes.textItem, classes.textColor].join(' ')}
-          >
+          <Grid item className={classes.textItem}>
             <Link href='https://github.com/davidabutler92'>
               <IconButton
                 className={classes.iconButton}
@@ -144,6 +91,6 @@ function About() {
       </Grid>
     </Container>
   );
-}
+};
 
 export default About;
