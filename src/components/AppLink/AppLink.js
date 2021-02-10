@@ -1,20 +1,9 @@
 import React from 'react';
 import { NavHashLink as RouterLink } from 'react-router-hash-link';
 import { Link } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
-const useStyles = makeStyles({
-  link: {
-    color: 'inherit',
-    fontSize: '1em',
-    letterSpacing: '.2em',
-    textTransform: 'uppercase',
-    '&:hover': {
-      textDecoration: 'none',
-    },
-  },
-});
+import useStyles from './AppLink.styles';
 
 function AppLink({ path, title }) {
   const classes = useStyles();
@@ -23,8 +12,7 @@ function AppLink({ path, title }) {
     <Link
       className={classes.link}
       smooth
-      activeClassName='selected'
-      activeStyle={{ color: '#4caf50' }}
+      activeClassName={classes.color}
       to={path}
       component={RouterLink}
     >

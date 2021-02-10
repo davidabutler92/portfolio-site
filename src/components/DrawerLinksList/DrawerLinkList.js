@@ -3,8 +3,11 @@ import { ListItem, ListItemText } from '@material-ui/core';
 import { NavHashLink as RouterLink } from 'react-router-hash-link';
 
 import { APP_LINKS } from '../../constants';
+import useStyles from './DrawerLinksList.styles';
 
-export default function DrawerLinkList() {
+export default function DrawerLinksList() {
+  const classes = useStyles();
+
   return (
     <>
       {APP_LINKS.map(({ path, title }, index) => (
@@ -13,8 +16,8 @@ export default function DrawerLinkList() {
           key={index}
           to={path}
           smooth
-          activeClassName='selected'
-          activeStyle={{ color: '#4caf50' }}
+          className={classes.listItem}
+          activeClassName={classes.listItemActive}
           component={RouterLink}
         >
           <ListItemText primary={title} />
