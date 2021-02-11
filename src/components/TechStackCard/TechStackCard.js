@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, Box, Typography } from '@material-ui/core';
 
-import useStyles from './TechStack.styles';
+import useStyles from './TechStackCard.styles';
 
 export default function TechStackCard() {
   const classes = useStyles();
