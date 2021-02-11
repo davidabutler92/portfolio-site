@@ -48,7 +48,7 @@ export default function App() {
           <Switch>
             <Route path='/' component={Container} />
             <Route path='/about' component={Container} />
-            <Route path='/portfolio' component={Container} />
+            <Route path='/projects' component={Container} />
             <Route path='/resume' component={Container} />
             <Route path='/contact' component={Container} />
           </Switch>

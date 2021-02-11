@@ -3,7 +3,7 @@ import React from 'react';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Home from '../Home/Home';
-import Portfolio from '../Portfolio/Portfolio';
+import Projects from '../Projects/Projects';
 import Resume from '../Resume/Resume';
 
 function Container() {
@@ -11,7 +11,7 @@ function Container() {
     <>
       <Home />
       <About />
-      <Portfolio />
+      <Projects />
       <Resume />
       <Contact />
     </>

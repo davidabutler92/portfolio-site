@@ -1,4 +1,5 @@
 import chatableLogo from './assets/chatable.png';
+import cardCovenLogo from './assets/cardCoven.png';
 import apiLogo from './assets/apiLogo.png';
 
 export const APP_LINKS = [
@@ -11,8 +12,8 @@ export const APP_LINKS = [
     title: 'About',
   },
   {
-    path: '/portfolio#section-portfolio',
-    title: 'Portfolio',
+    path: '/projects#section-projects',
+    title: 'Projects',
   },
   {
     path: '/resume#section-resume',
@@ -26,11 +27,19 @@ export const APP_LINKS = [
 
 export const APP_LOGOS = [
   {
-    image: apiLogo,
+    image: cardCovenLogo,
     title: 'Card Coven',
     alt: 'Card Coven logo',
     type: 'Fullstack',
     githubUrl: 'https://github.com/cardcoven',
+    deployedUrl: '',
+  },
+  {
+    image: apiLogo,
+    title: 'Tarty Gram',
+    alt: 'Tarty Gram logo',
+    type: 'API',
+    githubUrl: 'https://github.com/davidabutler92/15_auth_tarty_gram.git',
     deployedUrl: '',
   },
   {
