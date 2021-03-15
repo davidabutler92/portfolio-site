@@ -1,6 +1,7 @@
 import chatableLogo from './assets/chatable.png';
 import cardCovenLogo from './assets/cardCoven.png';
 import apiLogo from './assets/apiLogo.png';
+import mathLogo from './assets/math.png';
 
 export const APP_LINKS = [
   {
@@ -8,16 +9,16 @@ export const APP_LINKS = [
     title: 'Home',
   },
   {
-    path: '/about#section-about',
-    title: 'About',
+    path: '/resume#section-resume',
+    title: 'Resume',
   },
   {
     path: '/projects#section-projects',
     title: 'Projects',
   },
   {
-    path: '/resume#section-resume',
-    title: 'Resume',
+    path: '/about#section-about',
+    title: 'About',
   },
   {
     path: '/contact#section-contact',
@@ -36,11 +37,11 @@ export const APP_LOGOS = [
   },
   {
     image: apiLogo,
-    title: 'Tarty Gram',
-    alt: 'Tarty Gram logo',
+    title: 'Math Problems',
+    alt: 'Math Problems logo',
     type: 'API',
-    githubUrl: 'https://github.com/davidabutler92/15_auth_tarty_gram.git',
-    deployedUrl: '',
+    githubUrl: 'https://github.com/m4thl33tz/math-problems-api',
+    deployedUrl: 'https://math-problems-staging.herokuapp.com/',
   },
   {
     image: chatableLogo,
@@ -48,6 +49,14 @@ export const APP_LOGOS = [
     alt: 'Chatable logo',
     type: 'Fullstack',
     githubUrl: 'https://github.com/Chatable-2021',
-    deployedUrl: '',
+    deployedUrl: 'https://adoring-wright-0eba98.netlify.app/',
+  },
+  {
+    image: mathLogo,
+    title: 'M4thl33tz',
+    alt: 'M4thl33tz logo',
+    type: 'Fullstack',
+    githubUrl: 'https://github.com/m4thl33tz/m4thl33tz-client',
+    deployedUrl: 'https://m4thl33tz.netlify.app/',
   },
 ];
