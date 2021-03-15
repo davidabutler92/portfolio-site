@@ -1,26 +1,43 @@
 import React from 'react';
-import { HashLink as Link } from 'react-router-hash-link';
+import { AppBar } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import PropTypes from 'prop-types';
 
-import styles from './Header.css';
+import HeaderContents from '../HeaderContents/HeaderContents';
+import HideOnScroll from '../HideOnScroll/HideOnScroll';
+import useStyles from './Header.styles';
+import { useScroll } from './headerHooks';
 
-export default function Header() {
+function Header({ setLightOrDark, lightOrDark }) {
+  const classes = useStyles();
+
+  const isScrolled = useScroll();
+
+  const theme = useTheme();
+  const isScreenSizeMedium = useMediaQuery(theme.breakpoints.up('md'), {
+    noSsr: true,
+  });
+
   return (
-    <div className={styles.root}>
-      <Link smooth to="/#section-home">
-        Home
-      </Link>
-      <Link smooth to="/about#section-about">
-        About
-      </Link>
-      <Link smooth to="/portfolio#section-portfolio">
-        Portfolio
-      </Link>
-      <Link smooth to="/resume#section-resume">
-        Resume
-      </Link>
-      <Link smooth to="/contact#section-contact">
-        Contact
-      </Link>
-    </div>
+    <HideOnScroll>
+      <AppBar
+        component='header'
+        className={isScrolled ? classes.navScrolled : classes.root}
+      >
+        <HeaderContents
+          lightOrDark={lightOrDark}
+          setLightOrDark={setLightOrDark}
+          isScreenSizeMedium={isScreenSizeMedium}
+        />
+      </AppBar>
+    </HideOnScroll>
   );
 }
+
+Header.propTypes = {
+  setLightOrDark: PropTypes.func,
+  lightOrDark: PropTypes.bool,
+};
+
+export default Header;

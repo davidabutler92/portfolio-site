@@ -1,18 +1,21 @@
 import React from 'react';
+
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Home from '../Home/Home';
-import Portfolio from '../Portfolio/Portfolio';
+import Projects from '../Projects/Projects';
 import Resume from '../Resume/Resume';
 
-export default function Container() {
+function Container() {
   return (
-    <main>
+    <>
       <Home />
-      <About />
-      <Portfolio />
       <Resume />
+      <Projects />
+      <About />
       <Contact />
-    </main>
+    </>
   );
 }
+
+export default Container;
